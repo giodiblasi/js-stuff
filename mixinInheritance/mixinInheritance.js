@@ -11,4 +11,17 @@ const promoteToManager = (employee) => {
   });
 };
 
-module.exports = { promoteToManager };
+const promoteToDeveloper = (employee) => {
+  const activeProjetcs = [];
+  return Object.assign({}, employee, {
+    assignToProject(projectName) {
+      activeProjetcs.push(projectName);
+      return this;
+    },
+    getProjects() {
+      return activeProjetcs;
+    },
+  });
+};
+
+module.exports = { promoteToManager, promoteToDeveloper };
