@@ -4,7 +4,8 @@
   "description": "Some stuff in js",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha /tests"
+    "test": "nyc mocha",
+    "testAll": "nyc mocha **\\*.test.js"
   },
   "repository": {
     "type": "git",

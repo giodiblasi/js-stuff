@@ -2,7 +2,7 @@
 const assert = require('chai').assert;
 const e = require('../factoryFunctionInheritance');
 
-describe('---factory function Employee example--- calculate classic pay tests', () => {
+describe('---mixin Employee example--- calculate classic pay tests', () => {
   it('pay for commisioned', () => {
     const employee = e.getCommissionedEmployee();
     assert.equal(employee.calculatePay(), 10);
@@ -17,7 +17,7 @@ describe('---factory function Employee example--- calculate classic pay tests', 
   });
 });
 
-describe(' ---factory function Employee example--- classic is Pay Day tests', () => {
+describe(' ---mixin Employee example--- classic is Pay Day tests', () => {
   it(' for commisioned', () => {
     const employee = e.getCommissionedEmployee();
     assert.equal(employee.isDayPay(1), true);
