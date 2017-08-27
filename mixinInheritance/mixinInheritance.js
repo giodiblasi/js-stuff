@@ -1,4 +1,4 @@
-const promoteToManager = (employee) => {
+const withManagerFeatures = (employee) => {
   let employees = 0;
   return Object.assign({}, employee, {
     addEmployees(employeesNumber) {
@@ -11,7 +11,7 @@ const promoteToManager = (employee) => {
   });
 };
 
-const promoteToDeveloper = (employee) => {
+const withDeveloperFeatures = (employee) => {
   const activeProjetcs = [];
   return Object.assign({}, employee, {
     assignToProject(projectName) {
@@ -24,4 +24,4 @@ const promoteToDeveloper = (employee) => {
   });
 };
 
-module.exports = { promoteToManager, promoteToDeveloper };
+module.exports = { withManagerFeatures, withDeveloperFeatures };

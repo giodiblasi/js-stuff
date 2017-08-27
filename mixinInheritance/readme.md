@@ -27,7 +27,10 @@ manager.addEmployees(); //from Manager
 Using mixin allow us to use **multiple inheritance** :
 
 ```javascript
-const managerDev = compose(promoteToManager, promoteToDeveloper)(e.getCommissionedEmployee());
+const managerDev = compose(
+      promoteToManager,
+      promoteToDeveloper)
+      (e.getCommissionedEmployee());
 
 managerDev
       .assignToProject('The Best Project')

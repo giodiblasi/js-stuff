@@ -1,22 +1,25 @@
 /* global describe it */
 const assert = require('chai').assert;
-const { promoteToManager, promoteToDeveloper } = require('../mixinInheritance');
+const { withDeveloperFeatures, withManagerFeatures } = require('../mixinInheritance');
 const e = require('../factoryFunctionInheritance');
 
 const compose = (...fns) => value => fns.reduceRight((a, v) => v(a), value);
 
 describe('---mixin Employee example---', () => {
   it('test that manager has employee behavior', () => {
-    const manager = promoteToManager(e.getCommissionedEmployee());
+    const manager = withManagerFeatures(e.getCommissionedEmployee());
     assert.equal(manager.calculatePay(), 10);
   });
   it('test that manager specific behavior', () => {
-    const manager = promoteToManager(e.getCommissionedEmployee());
+    const manager = withManagerFeatures(e.getCommissionedEmployee());
     assert.equal(manager.addEmployees(2).getEmployees(), 2);
   });
 
   it('multiple inheritance', () => {
-    const managerDev = compose(promoteToManager, promoteToDeveloper)(e.getCommissionedEmployee());
+    const managerDev = compose(
+      withDeveloperFeatures,
+      withManagerFeatures)(e.getCommissionedEmployee());
+
     managerDev
       .assignToProject('The Best Project')
       .assignToProject('Other Project')
