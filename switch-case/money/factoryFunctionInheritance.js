@@ -2,33 +2,28 @@
 // "function overriding", mixin are better when 
 // each of them adds a behavior to the base without know other mixin.
 
-
-const getEmployee = () => {
-  const that = {};
-  that.amount = 10;
-  return that;
-};
-
 const buildEmployee = (calculatePay, isDayPay) => {
-  const employee = getEmployee();
-  employee.calculatePay = calculatePay(employee);
+  const employee = {
+    amount: 10,
+  };
+  employee.calculatePay = () => calculatePay(employee.amount);
   employee.isDayPay = isDayPay;
   return employee;
 };
 
 const getHourlyEmployee = () => buildEmployee(
-  e => () => e.amount * 8,
+  amount => amount * 8,
   dayOfMonth => (dayOfMonth === 15),
 );
 
 const getCommissionedEmployee = () =>
   buildEmployee(
-    e => () => e.amount * 1,
+    amount => amount * 1,
     dayOfMonth => (dayOfMonth === 1),
   );
 
 const getSalariedEmployee = () => buildEmployee(
-  e => () => e.amount * 30,
+  amount => amount * 30,
   dayOfMonth => (dayOfMonth === 30),
 );
 

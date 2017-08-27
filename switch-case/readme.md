@@ -33,3 +33,30 @@ in this way we have removed the "enum"  (replaced with specifc methods), the usa
  assert.equal(employee.calculatePay(), 80);
 ```
 In this case we have not used mixin beacuse we have an inheritance that not extends base employee with new behavior but the same methods are overridden
+
+Using mixins to override methods can be a problem:
+we can apply more mixins to the same object to enrich it.
+
+if we implement the following mixins:
++ withHourlyPay
++ withSalariedPay
++ withCommissionedPay
+
+we can use them all together  in that way:
+
+```javascript
+ const employee = e.getEmployee();
+ compose(
+      withHourlyPay,
+      withSalariedPay,
+      withCommissionedPay)
+   (employee);
+```
+
+what's the meaning of this code? the last function applied override the methods, so it's the same to write:
+
+```javascript
+ const employee = withHourlyPay(getEmployee());
+```
+but our design does not reveal this behavior.
+Conclusion: mixins are not the better way to override object methods
