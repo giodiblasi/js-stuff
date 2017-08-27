@@ -35,4 +35,8 @@ managerDev
       .addEmployees(3);
 ```
 
-
+> **Note:**
+>
+> A possible approach can be:
+> + apply **factory function** to override methods
+> + apply **mixin** to add behavior
