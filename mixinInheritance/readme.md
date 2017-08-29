@@ -1,6 +1,14 @@
 # Functional Mixins
 In this code section I try to implement inheritance using functional mixin as describe in this [post](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c) by Eric Elliot
 
+### Super Hero
+In the first scenario we have a normal man, and we want to assign super powers to him. The available super powers are:
++ power to fly
++ laser eyes
+
+we want be able to apply only one power or both.
+
+### Employee
 As scenario we have an employee that has a calculatePay and isDayPay methods, then we would to extends an employee with manager feaures and with developer feature.
 ##### For Manager role we would:
 + add managed employees
