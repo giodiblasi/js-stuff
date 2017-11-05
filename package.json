@@ -4,7 +4,7 @@
   "description": "Some stuff in js",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha .\\**\\tests\\*.test.js",
+    "test": "nyc mocha ./**/tests/*.test.js",
     "testAll": "nyc mocha **\\*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
