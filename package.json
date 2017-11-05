@@ -4,7 +4,7 @@
   "description": "Some stuff in js",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha **\\*.test.js",
+    "test": "nyc mocha .\\**\\tests\\*.test.js",
     "testAll": "nyc mocha **\\*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -18,9 +18,7 @@
     "url": "https://github.com/giodiblasi/js-stuff/issues"
   },
   "homepage": "https://github.com/giodiblasi/js-stuff#readme",
-  "dependencies": {
-   
-  },
+  "dependencies": {},
   "devDependencies": {
     "coveralls": "^3.0.0",
     "eslint": "^4.4.1",
