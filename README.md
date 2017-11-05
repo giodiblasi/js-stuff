@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/giodiblasi/js-stuff/badge.svg?branch=master)](https://coveralls.io/github/giodiblasi/js-stuff?branch=master)
 # js-stuff
 
 A lab for my js experiments.
