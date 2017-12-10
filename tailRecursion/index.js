@@ -11,5 +11,3 @@ const type = process.argv[2];
 const number = process.argv[3];
 
 console.log(getFibonacciNumber(type, number));
-
-// node  --harmony  --use-strict tailRecursion\index.js [tail|head] 10
