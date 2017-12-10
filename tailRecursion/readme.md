@@ -59,3 +59,9 @@ node  --harmony  --use-strict tailRecursion\index.js [tail|head] 10
 ```
 use tail or head option to choose  the recursion type.
 
+If try with a big number, like 1000, you can see that using head recursion the task needs a lot of resources ( do not try this at home :) ).
+With tail recursion the task needs few istants.
+
+
+
+
