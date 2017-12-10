@@ -1,4 +1,4 @@
-# Tail Recursion Exmaple
+# Tail Recursion Example
 
 In this scenario, based on [this post](https://codurance.com/2017/12/07/recursion/), we implement a function that return the n-th number in the  Fibonacci sequence.
 
