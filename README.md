@@ -10,7 +10,8 @@ Repo Structure:
 + [High Order Function](https://github.com/giodiblasi/js-stuff/tree/master/highOrderFunction)
 + [Functional Mixins](https://github.com/giodiblasi/js-stuff/tree/master/mixinInheritance)
 + [Data Type Composition](https://github.com/giodiblasi/js-stuff/tree/master/waterBucket)
-+ [Recursion]((https://github.com/giodiblasi/js-stuff/tree/master/tailRecursion)
++ [Recursion](https://github.com/giodiblasi/js-stuff/tree/master/tailRecursion)
+
 
 Test command:
 ```javascript
