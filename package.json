@@ -20,15 +20,15 @@
   "homepage": "https://github.com/giodiblasi/js-stuff#readme",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^4.1.1",
-    "coveralls": "^3.0.0",
-    "eslint": "^5.14.1",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.5",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-config-google": "^0.9.1",
-    "eslint-plugin-import": "^2.7.0",
-    "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "nyc": "14.1.1",
     "ramda": "^0.24.1",
-    "sinon": "^7.2.5"
+    "sinon": "^7.3.2"
   }
 }
