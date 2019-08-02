@@ -1,14 +1,15 @@
 /* global describe it */
 const assert = require('chai').assert;
 const abstractData = require('../abstractData.js');
-const add = abstractData.add;
-const complex = abstractData.complex;
+const dispatchingOnType = require('../dispatchingOnType/dispatchingOnType');
+
+const complex = abstractData(dispatchingOnType);
 
 describe('--- Abstract Data (SICP)---', () => {
     it('Add Complex (Rectangular form)', () => {
         const n1 = complex.makeRectangular(2,1);
         const n2 = complex.makeRectangular(3,1);
-        const n3 = add(n1,n2);
+        const n3 = complex.addComplex(n1,n2);
         assert.equal(5,complex.realPart(n3));
         assert.equal(2,complex.imgPart(n3));
         assert.equal(5.38,complex.magnitude(n3));
@@ -18,7 +19,7 @@ describe('--- Abstract Data (SICP)---', () => {
      it('Add Complex (Polar form)', () => {
         const n1 = complex.makePolar(2,1);
         const n2 = complex.makePolar(3,1);
-        const n3 = add(n1,n2); 
+        const n3 = complex.addComplex(n1,n2); 
         assert.equal(5, complex.realPart(n3));
         assert.equal(2, complex.imgPart(n3));
         assert.equal(5.38, complex.magnitude(n3));
