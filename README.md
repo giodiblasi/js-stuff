@@ -12,6 +12,7 @@ Repo Structure:
 + [Data Type Composition](https://github.com/giodiblasi/js-stuff/tree/master/waterBucket)
 + [Recursion](https://github.com/giodiblasi/js-stuff/tree/master/tailRecursion)
 + [Procedural Data Representation](https://github.com/giodiblasi/js-stuff/tree/master/proceduralData)
++ [Abstract Data](https://github.com/giodiblasi/js-stuff/tree/master/abstractData)
 
 
 Test command:
