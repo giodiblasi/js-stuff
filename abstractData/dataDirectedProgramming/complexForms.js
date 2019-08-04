@@ -29,18 +29,18 @@ const imgPartPolar = complex => magnitudePolar(complex) * Math.sin(anglePolar(co
 const install = table => 
     ({...table,
         'rectangular': {
-            realPart: realPartRectangular,
-            imgPart: imgPartRectangular,
-            angle: angleRectangular,
-            magnitude: magnitudeRectangular,
-            make: makeRectangular
+            'realPart': realPartRectangular,
+            'imgPart': imgPartRectangular,
+            'angle': angleRectangular,
+            'magnitude': magnitudeRectangular,
+            'make': makeRectangular
         },
         'polar':{
-            realPart: realPartPolar,
-            imgPart: imgPartPolar,
-            angle: anglePolar,
-            magnitude: magnitudePolar,
-            make: makePolar    
+            'realPart': realPartPolar,
+            'imgPart': imgPartPolar,
+            'angle': anglePolar,
+            'magnitude': magnitudePolar,
+            'make': makePolar    
         }
     });
 module.exports = {install};

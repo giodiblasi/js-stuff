@@ -3,14 +3,19 @@ const complexForms = require('./complexForms');
 
 const install = () => {
     const dataDirectedTable = complexForms.install({});
-    const getMethodsByTag = (taggedData) => dataDirectedTable[tag.getTypeTag(taggedData)];
+    const genericApply = (taggedData, method) => {
+        const typeTag = tag.getTypeTag(taggedData);
+        const content = tag.getContent(taggedData);
+        return dataDirectedTable[typeTag][method](content);
+    }
+    
     return {
-        realPart: taggedComplex => getMethodsByTag(taggedComplex).realPart(tag.getContent(taggedComplex)),
-        imgPart: taggedComplex => getMethodsByTag(taggedComplex).imgPart(tag.getContent(taggedComplex)),
-        magnitude: taggedComplex => getMethodsByTag(taggedComplex).magnitude(tag.getContent(taggedComplex)),
-        angle: taggedComplex => getMethodsByTag(taggedComplex).angle(tag.getContent(taggedComplex)),
-        makeRectangular: dataDirectedTable['rectangular'].make,
-        makePolar:  dataDirectedTable['polar'].make
+        realPart: taggedComplex => genericApply(taggedComplex, 'realPart'),
+        imgPart: taggedComplex => genericApply(taggedComplex, 'imgPart'),
+        magnitude: taggedComplex => genericApply(taggedComplex, 'magnitude'),
+        angle: taggedComplex => genericApply(taggedComplex, 'angle'),
+        makeRectangular: dataDirectedTable['rectangular']['make'],
+        makePolar:  dataDirectedTable['polar']['make']
     }
 };
 
