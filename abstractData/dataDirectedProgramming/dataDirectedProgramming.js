@@ -1,4 +1,5 @@
 const tag = require('../tag');
+const symbols = require('./symbols')
 const complexForms = require('./complexForms');
 
 const install = () => {
@@ -10,12 +11,12 @@ const install = () => {
     }
     
     return {
-        realPart: taggedComplex => genericApply(taggedComplex, 'realPart'),
-        imgPart: taggedComplex => genericApply(taggedComplex, 'imgPart'),
-        magnitude: taggedComplex => genericApply(taggedComplex, 'magnitude'),
-        angle: taggedComplex => genericApply(taggedComplex, 'angle'),
-        makeRectangular: dataDirectedTable['rectangular']['make'],
-        makePolar:  dataDirectedTable['polar']['make']
+        realPart: taggedComplex => genericApply(taggedComplex, symbols.REAL_PART),
+        imgPart: taggedComplex => genericApply(taggedComplex, symbols.IMG_PART),
+        magnitude: taggedComplex => genericApply(taggedComplex, symbols.MAGNITUDE),
+        angle: taggedComplex => genericApply(taggedComplex, symbols.ANGLE),
+        makeRectangular: dataDirectedTable[symbols.RECTANGULAR][symbols.MAKE],
+        makePolar:  dataDirectedTable[symbols.POLAR][symbols.MAKE]
     }
 };
 

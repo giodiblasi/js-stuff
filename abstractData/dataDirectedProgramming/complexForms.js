@@ -1,7 +1,7 @@
 const tag = require('../tag.js');
-
+const symbols = require('./symbols')
 //Rectangular Form
-const makeRectangular = (x,y) => tag.attachTag('rectangular',{ x, y });
+const makeRectangular = (x,y) => tag.attachTag(symbols.RECTANGULAR,{ x, y });
 
 const realPartRectangular = complex => complex.x;
 const imgPartRectangular = complex => complex.y;
@@ -18,7 +18,7 @@ const angleRectangular = complex =>
 
 
 //Polar Form
-const makePolar = (r,A) => tag.attachTag('polar',{ r, A });
+const makePolar = (r,A) => tag.attachTag(symbols.POLAR, { r, A });
 
 const magnitudePolar = complex => complex.r;
 const anglePolar = complex => complex.A;
@@ -26,22 +26,24 @@ const anglePolar = complex => complex.A;
 const realPartPolar = complex => magnitudePolar(complex) * Math.cos(anglePolar(complex));
 const imgPartPolar = complex => magnitudePolar(complex) * Math.sin(anglePolar(complex));
 
-const install = table => 
-    ({...table,
-        'rectangular': {
-            'realPart': realPartRectangular,
-            'imgPart': imgPartRectangular,
-            'angle': angleRectangular,
-            'magnitude': magnitudeRectangular,
-            'make': makeRectangular
-        },
-        'polar':{
-            'realPart': realPartPolar,
-            'imgPart': imgPartPolar,
-            'angle': anglePolar,
-            'magnitude': magnitudePolar,
-            'make': makePolar    
-        }
-    });
+const install = table => {
+    var newTable= {...table};
+    
+    newTable[symbols.RECTANGULAR]={};
+    newTable[symbols.RECTANGULAR][symbols.REAL_PART] = realPartRectangular;
+    newTable[symbols.RECTANGULAR][symbols.IMG_PART] = imgPartRectangular;
+    newTable[symbols.RECTANGULAR][symbols.ANGLE] = angleRectangular;
+    newTable[symbols.RECTANGULAR][symbols.MAGNITUDE] = magnitudeRectangular;
+    newTable[symbols.RECTANGULAR][symbols.MAKE] = makeRectangular;
+
+    newTable[symbols.POLAR]={}
+    newTable[symbols.POLAR][symbols.REAL_PART] = realPartPolar;
+    newTable[symbols.POLAR][symbols.IMG_PART] = imgPartPolar;
+    newTable[symbols.POLAR][symbols.ANGLE] = anglePolar;
+    newTable[symbols.POLAR][symbols.MAGNITUDE] = magnitudePolar;
+    newTable[symbols.POLAR][symbols.MAKE] = makePolar;
+    return newTable;
+};
+    
 module.exports = {install};
 

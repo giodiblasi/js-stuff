@@ -1,7 +1,7 @@
 const tag = require('../tag.js');
-
+const {POLAR, RECTANGULAR} = require('./symbols');
 //Rectangular Form
-const makeRectangular = (x,y) => tag.attachTag('rectangular',{ x, y });
+const makeRectangular = (x,y) => tag.attachTag(RECTANGULAR,{ x, y });
 
 const realPartRectangular = complex => complex.x;
 const imgPartRectangular = complex => complex.y;
@@ -18,7 +18,7 @@ const angleRectangular = complex =>
 
 
 //Polar Form
-const makePolar = (r,A) => tag.attachTag('polar',{ r, A });
+const makePolar = (r,A) => tag.attachTag(POLAR,{ r, A });
 
 const magnitudePolar = complex => complex.r;
 const anglePolar = complex => complex.A;
